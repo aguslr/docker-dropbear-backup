@@ -55,7 +55,7 @@ To allow certain users to use the server for backup, we can copy the SSH keys
 into the `authorized_keys` file (e. g. `"${PWD}"/backups/.ssh/authorized_keys`)
 with the format:
 
-       no-agent-forwarding,no-port-forwarding,no-pty,no-X11-forwarding SSH_KEY USER@HOST
+    no-agent-forwarding,no-port-forwarding,no-pty,no-X11-forwarding SSH_KEY USER@HOST
 
 
 Build locally
