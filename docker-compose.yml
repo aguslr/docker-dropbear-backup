@@ -1,0 +1,19 @@
+version: '2.4'
+
+services:
+  backup:
+    container_name: backup
+    build:
+      context: .
+    restart: unless-stopped
+    volumes:
+      - ./dropbear:/etc/dropbear
+      - ./backup:/home/rbackup
+    environment:
+      - BACKUP_USER=rbackup
+    ports:
+      - 2222:22/tcp
+    healthcheck:
+      test: timeout 2 nc 127.0.0.1 25 22 | grep -qE "^SSH.*dropbear"
+      interval: 10m
+      timeout: 3s
