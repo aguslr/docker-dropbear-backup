@@ -28,10 +28,10 @@ To use *docker-backup-ssh*, follow these steps:
 1. Clone and start the container:
 
        docker run -p 2222:22 \
-         -e BACKUP_USER=rbackup \
-         -e BACKUP_UID=11000 \
+         -e BACKUP_USER=bob \
+         -e BACKUP_UID=1000 \
          -v "${PWD}"/dropbear:/etc/dropbear \
-         -v "${PWD}"/backups:/home/rbackup \
+         -v "${PWD}"/backups:/home/bob \
          docker.io/aguslr/backup-ssh:latest
 
 2. Configure your backup software to connect to your *Dropbear* server's IP
@@ -43,10 +43,10 @@ To use *docker-backup-ssh*, follow these steps:
 The image is configured using environment variables passed at runtime. All these
 variables are prefixed by `BACKUP_`.
 
-| Variable | Function                           | Required |
-| :------- | :--------------------------------- | -------- |
-| `USER`   | New user that will own the backups | Y        |
-| `UID`    | UID of the new user                | N        |
+| Variable | Function                           | Default   | Required |
+| :------- | :--------------------------------- | :-------- | -------- |
+| `USER`   | New user that will own the backups | `rbackup` | N        |
+| `UID`    | UID of the new user                | 11000     | N        |
 
 
 #### Authorized keys file
