@@ -1,7 +1,7 @@
-[aguslr/docker-backup-ssh][1]
-==========================
+[aguslr/docker-dropbear-backup][1]
+==================================
 
-[![publish-docker-image](https://github.com/aguslr/docker-backup-ssh/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/aguslr/docker-backup-ssh/actions/workflows/docker-publish.yml) [![docker-pulls](https://img.shields.io/docker/pulls/aguslr/backup-ssh)](https://hub.docker.com/r/aguslr/backup-ssh) [![image-size](https://img.shields.io/docker/image-size/aguslr/backup-ssh/latest)](https://hub.docker.com/r/aguslr/backup-ssh)
+[![publish-docker-image](https://github.com/aguslr/docker-dropbear-backup/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/aguslr/docker-dropbear-backup/actions/workflows/docker-publish.yml) [![docker-pulls](https://img.shields.io/docker/pulls/aguslr/dropbear-backup)](https://hub.docker.com/r/aguslr/dropbear-backup) [![image-size](https://img.shields.io/docker/image-size/aguslr/dropbear-backup/latest)](https://hub.docker.com/r/aguslr/dropbear-backup)
 
 
 This *Docker* image sets up *Dropbear* inside a docker container that allows
@@ -23,7 +23,7 @@ remote backups using *Borg*, *rsync* or *sftp-server*
 Installation
 ------------
 
-To use *docker-backup-ssh*, follow these steps:
+To use *docker-dropbear-backup*, follow these steps:
 
 1. Clone and start the container:
 
@@ -32,7 +32,7 @@ To use *docker-backup-ssh*, follow these steps:
          -e BACKUP_UID=1000 \
          -v "${PWD}"/dropbear:/etc/dropbear \
          -v "${PWD}"/backups:/home/bob \
-         docker.io/aguslr/backup-ssh:latest
+         docker.io/aguslr/dropbear-backup:latest
 
 2. Configure your backup software to connect to your *Dropbear* server's IP
    address on port `2222` with user `BACKUP_USER`.
@@ -65,15 +65,15 @@ Instead of pulling the image from a remote repository, you can build it locally:
 
 1. Clone the repository:
 
-       git clone https://github.com/aguslr/docker-backup-ssh.git
+       git clone https://github.com/aguslr/docker-dropbear-backup.git
 
 2. Change into the newly created directory and use `docker-compose` to build and
    launch the container:
 
-       cd docker-backup-ssh && docker-compose up --build -d
+       cd docker-dropbear-backup && docker-compose up --build -d
 
 
-[1]: https://github.com/aguslr/docker-backup-ssh
+[1]: https://github.com/aguslr/docker-dropbear-backup
 [2]: https://matt.ucc.asn.au/dropbear/dropbear.html
 [3]: https://borgbackup.org/
 [4]: https://rsync.samba.org/
