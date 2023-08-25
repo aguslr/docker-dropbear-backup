@@ -1,7 +1,7 @@
 [aguslr/docker-dropbear-backup][1]
 ==================================
 
-[![publish-docker-image](https://github.com/aguslr/docker-dropbear-backup/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/aguslr/docker-dropbear-backup/actions/workflows/docker-publish.yml) [![docker-pulls](https://img.shields.io/docker/pulls/aguslr/dropbear-backup)](https://hub.docker.com/r/aguslr/dropbear-backup) [![image-size](https://img.shields.io/docker/image-size/aguslr/dropbear-backup/latest)](https://hub.docker.com/r/aguslr/dropbear-backup)
+[![docker-pulls](https://img.shields.io/docker/pulls/aguslr/dropbear-backup)](https://hub.docker.com/r/aguslr/dropbear-backup) [![image-size](https://img.shields.io/docker/image-size/aguslr/dropbear-backup/latest)](https://hub.docker.com/r/aguslr/dropbear-backup)
 
 
 This *Docker* image sets up *Dropbear* inside a docker container that allows
