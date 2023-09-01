@@ -7,5 +7,5 @@ if [ "${BACKUP_USER:=rbackup}" ] && ! grep -q -s "^${BACKUP_USER}" /etc/passwd; 
 	chown -R "${BACKUP_USER}":"${BACKUP_USER}" "/home/${BACKUP_USER}/"*
 fi
 
-# Start AirSane
+# Start SSH server
 /usr/sbin/dropbear "$@"
