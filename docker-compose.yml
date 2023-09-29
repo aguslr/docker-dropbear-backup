@@ -15,5 +15,5 @@ services:
       - 2222:22/tcp
     healthcheck:
       test: timeout 2 nc 127.0.0.1 22 | grep -qE "^SSH.*dropbear"
-      interval: 10m
+      interval: 1m
       timeout: 3s
