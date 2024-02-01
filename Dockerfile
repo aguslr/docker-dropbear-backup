@@ -1,10 +1,13 @@
-ARG BASE_IMAGE=library/alpine:latest
+ARG BASE_IMAGE=library/debian:stable-slim
 
 FROM docker.io/${BASE_IMAGE}
 
 RUN \
-  apk add --update --no-cache dropbear borgbackup openssh-sftp-server rrsync \
-  && rm -rf /var/cache/apk/*
+  apt-get update && \
+  env DEBIAN_FRONTEND=noninteractive \
+  apt-get install -y --no-install-recommends dropbear-bin borgbackup openssh-sftp-server rsync \
+  -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+  && apt-get clean && rm -rf /var/lib/apt/lists/* /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
 COPY bin/ssh_command.sh /usr/local/bin

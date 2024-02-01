@@ -13,7 +13,7 @@ case "${SSH_COMMAND_BIN}" in
 		/usr/bin/rrsync ~/rsync/
 		;;
 	*sftp-server)
-		/usr/lib/ssh/sftp-server -d ~/sftp/
+		/usr/lib/sftp-server -d ~/sftp/
 		;;
 	*)
 		printf "Access denied\n" >&2
