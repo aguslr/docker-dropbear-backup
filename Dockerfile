@@ -5,7 +5,7 @@ FROM docker.io/${BASE_IMAGE}
 RUN \
   apt-get update && \
   env DEBIAN_FRONTEND=noninteractive \
-  apt-get install -y --no-install-recommends dropbear-bin borgbackup openssh-sftp-server rsync \
+  apt-get install -y --no-install-recommends dropbear-bin borgbackup openssh-sftp-server rsync netcat-traditional \
   -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /var/lib/apt/lists/*
 
