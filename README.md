@@ -30,8 +30,8 @@ To use *docker-dropbear-backup*, follow these steps:
        docker run -p 2222:22 \
          -e BACKUP_USER=bob \
          -e BACKUP_UID=1000 \
-         -v ./dropbear:/etc/dropbear \
-         -v ./backups:/home/bob \
+         -v "${PWD}"/dropbear:/etc/dropbear \
+         -v "${PWD}"/backups:/home/bob \
          docker.io/aguslr/dropbear-backup:latest
 
 2. Configure your backup software to connect to your *Dropbear* server's IP
@@ -52,7 +52,7 @@ variables are prefixed by `BACKUP_`.
 #### Authorized keys file
 
 To allow certain users to use the server for backup, we can copy the SSH keys
-into the `authorized_keys` file (e. g. `./backups/.ssh/authorized_keys`)
+into the `authorized_keys` file (e. g. `"${PWD}"/backups/.ssh/authorized_keys`)
 with the format:
 
     no-agent-forwarding,no-port-forwarding,no-pty,no-X11-forwarding SSH_KEY USER@HOST
