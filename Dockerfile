@@ -9,8 +9,7 @@ RUN \
   -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /var/lib/apt/lists/*
 
-COPY entrypoint.sh /entrypoint.sh
-COPY bin/ssh_command.sh /usr/local/bin
+COPY rootfs/ /
 
 EXPOSE 22/tcp
 
