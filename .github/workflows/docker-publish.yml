@@ -2,7 +2,7 @@ name: Publish Docker Image
 
 on:
   schedule:
-    - cron: '30 4 * * *'
+    - cron: '30 16 * * *'
   pull_request:
     branches:
       - main
